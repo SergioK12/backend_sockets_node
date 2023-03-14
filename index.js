@@ -17,7 +17,15 @@ io.on('connection', client => {
         console.log("cliente desconectado")
 
     });
-  });
+
+    client.on('Mensaje', (carga) => {
+
+        io.emit('m2', { nombre : "Sergio"})
+    });
+    
+    
+
+});
 
 const pathPublic = path.resolve(__dirname, 'public')
 app.use(express.static(pathPublic))
