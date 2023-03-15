@@ -20,6 +20,12 @@
         cliente.on('disconnect', function(){
             console.log("Desconectado del servidor")
         })
+ 
+        cliente.emit('Mensaje', 'Sergio')
+
+        cliente.on('m2', function(carga){
+            console.log("Escuchando", carga);
+        });
 
     </script>
 </body>
