@@ -3,13 +3,11 @@ io.on('connection', client => {
     console.log("cliente conectado")
 
     client.on('disconnect', () => {
-
         console.log("cliente desconectado")
-
     });
 
-    client.on('Mensaje', (carga) => {
-
+    client.on('mensaje', (carga) => {
+        console.log('Mensaje: ',carga)  
         io.emit('m2', { nombre: "Sergio" })
     });
 
@@ -20,6 +18,9 @@ io.on('connection', client => {
     //test de retrasnmision
     client.on('test', (carga)=> {
         io.emit("test", carga)
+
+    client.on('emitir-mensaje', (payload) => {
+        io.emit('nuevo-mensaje', payload);
     })
 
 });

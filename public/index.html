@@ -21,12 +21,17 @@
             console.log("Desconectado del servidor")
         })
  
-        cliente.emit('Mensaje', 'Sergio')
+        cliente.emit('mensaje', { nombre: "Sergio"})
 
-        cliente.on('m2', function(carga){
+        cliente.on('mensaje', function(carga){
             console.log("Escuchando", carga);
         });
 
+        cliente.emit('nuevo-mensaje', {test: "test"});
+
+        cliente.on('nuevo-mensaje', function(carga){
+            console.log("Datos",carga);
+        })
     </script>
 </body>
 </html>
