@@ -13,4 +13,13 @@ io.on('connection', client => {
         io.emit('m2', { nombre: "Sergio" })
     });
 
+    client.on('emitir-mensaje', (carga) => {
+
+        io.emit('Nuevo-Mensaje', "HEY!!!!")
+    });
+    //test de retrasnmision
+    client.on('test', (carga)=> {
+        io.emit("test", carga)
+    })
+
 });
