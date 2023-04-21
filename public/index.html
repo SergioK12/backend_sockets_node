@@ -7,7 +7,7 @@
     <title>Socket Server </title>
 </head>
 <body>
-    <h1>Acceso denegado</h1>
+    <h1>Flutter io</h1>
     <script src="socket.io/socket.io.js"></script>
 
     <script>
@@ -20,8 +20,6 @@
         cliente.on('disconnect', function(){
             console.log("Desconectado del servidor")
         })
- 
-        cliente.emit('mensaje', { nombre: "Sergio"})
 
         cliente.on('mensaje', function(carga){
             console.log("Escuchando", carga);
@@ -29,8 +27,8 @@
 
         cliente.emit('nuevo-mensaje', {test: "test"});
 
-        cliente.on('nuevo-mensaje', function(carga){
-            console.log("Datos",carga);
+        cliente.on('emitir-flutter', function(carga){
+            console.log("data: ",carga);
         })
     </script>
 </body>
