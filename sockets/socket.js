@@ -21,6 +21,18 @@ io.on('connection', client => {
 
     client.on('emitir-mensaje', (payload) => {
         io.emit('nuevo-mensaje', payload);
+        //console.log("Flutter dice:",payload);
     })
+
+    client.on('emitir-flutter', (payload) => {
+        client.broadcast.emit('emitir-flutter', payload)
+        console.log(payload);
+    })
+
+    client.on('retrasnmitir', (payload) => {
+        console.log(payload);
+    })
+
+    
 
 });
