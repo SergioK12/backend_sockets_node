@@ -29,6 +29,10 @@
 
         cliente.on('emitir-flutter', function(carga){
             console.log("data: ",carga);
+        });
+
+        cliente.on('bandas', function(bandas){
+            console.table(bandas);
         })
     </script>
 </body>
