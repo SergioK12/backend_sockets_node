@@ -29,7 +29,11 @@
 
         cliente.on('emitir-flutter', function(carga){
             console.log("data: ",carga);
-        })
+        });
+
+        client.on('vote-band', (payload) => {
+        console.log(payload);
+    })
     </script>
 </body>
 </html>
