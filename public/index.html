@@ -31,9 +31,9 @@
             console.log("data: ",carga);
         });
 
-        cliente.on('bandas', function(bandas){
-            console.table(bandas);
-        })
+        client.on('vote-band', (payload) => {
+        console.log(payload);
+    })
     </script>
 </body>
 </html>
