@@ -40,12 +40,15 @@ io.on('connection', client => {
     })
 
     client.on('vote-band', (payload) => {
-        console.log(payload);
 
         bands.voteband(payload.id);
-    client.emit('bandas', bands.getbands())
+        client.emit('bandas', bands.getbands());
     })
 
-    
+    client.on("add-band",(payload)=> {
+        const nuevabanda = new Band(payload.name);
+        bands.addband(nuevabanda);
+        client.emit('bandas', bands.getbands());
+    })
 
 });

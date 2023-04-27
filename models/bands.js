@@ -10,6 +10,7 @@ class Bands {
     }
 
     getbands(){
+        console.log(this.bands);
         return this.bands;
     }
 
