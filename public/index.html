@@ -31,13 +31,13 @@
             console.log("data: ",carga);
         });
 
-        client.on('vote-band', (payload) => {
+        cliente.on('vote-band', (payload) => {
         console.log(payload);
         });
 
-        cliente.on("bandas", function(bandas) {
+        cliente.on('active-bands', function(bands) {
             console.clear();
-            console.table(bandas);
+            console.table(bands);
         });
     </script>
 </body>

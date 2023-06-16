@@ -6,7 +6,7 @@ class Bands {
     }
 
     addband(band = new  Band()){
-        this.bands.push(band);
+        return this.bands.push(band);
     }
 
     getbands(){
@@ -19,7 +19,7 @@ class Bands {
         return this.bands;
     }
 
-    voteband(id = ' '){
+    voteband(id = ''){
         this.bands = this.bands.map(
             band => {
                 if(band.id == id){
